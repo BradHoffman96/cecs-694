@@ -2,7 +2,7 @@ from collections import Counter
 
 def main():
     words = ["love", "i", "coding", "coding", "i", "love", "Deep", "learning", "i", "love", "coding"]
-    k = 2
+    k = 4
 
     counter = Counter(words)
     words_by_count = counter.most_common()
@@ -32,7 +32,16 @@ def main():
         index = sorted_indexes[i]
         final_words.append(words[index]) 
 
-    print(final_words)
+    if len(final_words) > k:
+        print(final_words)
+    else:
+        #print the rest of the words
+        remainder = k - len(final_words)
+        for i in range(len(final_words), k):
+            final_words.append(words_by_count[i][0])
+        print(final_words)
+        
+    print(words_by_count)
 
 if __name__ == "__main__":
     main()
