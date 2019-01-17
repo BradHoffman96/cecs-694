@@ -1,3 +1,9 @@
+#**************************#
+#* Brad Hoffman  *         #
+#* CECS 694-02   *         # 
+#* Assignment 01 *         # 
+#************************* #
+
 import random
 
 row_size = 3

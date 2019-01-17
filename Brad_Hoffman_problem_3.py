@@ -1,3 +1,9 @@
+#**************************#
+#* Brad Hoffman  *         #
+#* CECS 694-02   *         # 
+#* Assignment 01 *         # 
+#************************* #
+
 from collections import Counter
 
 def get_similar_count(words, words_by_count):

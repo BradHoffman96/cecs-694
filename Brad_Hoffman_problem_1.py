@@ -1,3 +1,9 @@
+#**************************#
+#* Brad Hoffman  *         #
+#* CECS 694-02   *         # 
+#* Assignment 01 *         # 
+#************************* #
+
 from __future__ import print_function
 import random
 import numpy as np
