@@ -1,14 +1,9 @@
 from collections import Counter
 
-def main():
-    words = ["love", "i", "coding", "coding", "i", "love", "Deep", "learning", "i", "love", "coding"]
-    k = 4
-
-    counter = Counter(words)
-    words_by_count = counter.most_common()
-
+def get_similar_count(words, words_by_count):
     max_count = 0
     words_list = []
+    #Getting a list of words with the same max count
     for i in range(0, len(words_by_count)):
         current_word = words_by_count[i][0]
         current_count = words_by_count[i][1]
@@ -32,11 +27,29 @@ def main():
         index = sorted_indexes[i]
         final_words.append(words[index]) 
 
-    if len(final_words) < k:
+    return final_words
+
+def main():
+    #words = ["love", "i", "coding", "coding", "i", "love", "Deep", "learning", "i", "love", "coding"]
+    words = ["do", "you", "love", "you", "love", "me", "me", "i", "love", "you", "do"]
+    k = 4
+
+    counter = Counter(words)
+    words_by_count = counter.most_common()
+
+    #while len(final_words) < k:
+    final_words = get_similar_count(words, words_by_count)
+
+    while len(final_words) < k:
         #print the rest of the words
-        remainder = k - len(final_words)
-        for i in range(len(final_words), k):
-            final_words.append(words_by_count[i][0])
+        for word in final_words:
+            while word in words:
+                words.remove(word)
+            for word_count in words_by_count:
+                if word == word_count[0]:
+                    words_by_count.remove(word_count)
+        
+        final_words.extend(get_similar_count(words, words_by_count))
         
     print(final_words)
 
