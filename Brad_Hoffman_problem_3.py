@@ -32,16 +32,13 @@ def main():
         index = sorted_indexes[i]
         final_words.append(words[index]) 
 
-    if len(final_words) > k:
-        print(final_words)
-    else:
+    if len(final_words) < k:
         #print the rest of the words
         remainder = k - len(final_words)
         for i in range(len(final_words), k):
             final_words.append(words_by_count[i][0])
-        print(final_words)
         
-    print(words_by_count)
+    print(final_words)
 
 if __name__ == "__main__":
     main()
