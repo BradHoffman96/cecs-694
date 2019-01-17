@@ -1,4 +1,9 @@
 import random
+import numpy as np
+
+def np_tensor_product(matrix_a, matrix_b):
+   matrix_c = np.kron(matrix_a, matrix_b)
+   print(matrix_c)
 
 def main():
     col_a = 2
@@ -10,9 +15,19 @@ def main():
     matrix_b = [[random.randint(0, 5) for i in range(col_b)] for i in range(row_b)]
     matrix_c = [[0 for i in range(col_a * col_b)] for i in range(row_a * row_b)]
 
-    print(matrix_a)
-    print(matrix_b)
-    print(matrix_c)
+    m_a = [
+        [1, 2],
+        [3, 4]
+    ]
+
+    m_b = [
+        [0, 5],
+        [6, 7]
+    ]
+
+    print(m_a)
+    print(m_b)
+    np_tensor_product(m_a, m_b)
 
     #Iterate through the rows of matrix_a
     for i in range(0, row_a):
