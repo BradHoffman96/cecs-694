@@ -14,10 +14,12 @@ row_a = 2
 row_b = 2
 
 def np_tensor_product(matrix_a, matrix_b):
+    print("Numpy kron() function")
     matrix_c = np.kron(matrix_a, matrix_b)
     print(matrix_c)
 
 def non_np_tensor_product(matrix_a, matrix_b):
+    print("Non-Numpy implementation")
     matrix_c = [[0 for j in range(col_a * col_b)] for i in range(row_a * row_b)]
 
     #Iterate through the rows of matrix_a
@@ -34,21 +36,19 @@ def non_np_tensor_product(matrix_a, matrix_b):
 
 def main():
     #Used for random intializing of matrices
-    #matrix_a = [[random.randint(0, 5) for j in range(col_a)] for i in range(row_a)]
-    #matrix_b = [[random.randint(0, 5) for j in range(col_b)] for i in range(row_b)]
+    matrix_a = [[random.randint(0, 5) for j in range(col_a)] for i in range(row_a)]
+    matrix_b = [[random.randint(0, 5) for j in range(col_b)] for i in range(row_b)]
 
-    matrix_a = [
-        [1, 2],
-        [3, 4]
-    ]
+    print("Matrix A")
+    print(matrix_a)
+    
+    print("\n")
 
-    matrix_b = [
-        [0, 5],
-        [6, 7]
-    ]
+    print("Matrix B")
+    print(matrix_b)
 
-    #print(m_a)
-    #print(m_b)
+    print("\n")
+
     np_tensor_product(matrix_a, matrix_b)
     print("\n")
     non_np_tensor_product(matrix_a, matrix_b)

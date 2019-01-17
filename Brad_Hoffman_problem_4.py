@@ -51,6 +51,17 @@ def main():
             row.append(i * j)
         c.append(row)
 
+    print("Array A")
+    print(a)
+
+    print("Array B")
+    print(b)
+
+    print("Matrix C")
+    print(c)
+
+    print("Max Sum")
+
     findMaxSubMatrix(c)
 
 if __name__ == "__main__":

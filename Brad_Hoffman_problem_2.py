@@ -5,7 +5,7 @@
 #************************* #
 
 def main():
-    string = "())"
+    string = ")()))(()()))"
 
     stack = [-1]
     longest = 0
@@ -20,6 +20,7 @@ def main():
             else:
                 longest = max(longest, index - stack[len(stack) - 1])
 
+    print(string)
     print(longest)
 
 if __name__ == "__main__":

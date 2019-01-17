@@ -36,9 +36,11 @@ def get_similar_count(words, words_by_count):
     return final_words
 
 def main():
-    #words = ["love", "i", "coding", "coding", "i", "love", "Deep", "learning", "i", "love", "coding"]
-    words = ["do", "you", "love", "you", "love", "me", "me", "i", "love", "you", "do"]
+    words = ["love", "i", "coding", "coding", "i", "love", "Deep", "learning", "i", "love", "coding"]
+    #words = ["do", "you", "love", "you", "love", "me", "me", "i", "love", "you", "do"]
     k = 4
+
+    print(words)
 
     counter = Counter(words)
     words_by_count = counter.most_common()
